@@ -11,7 +11,7 @@ class DomainInfo {
      * AFAICT, this only happens with edge-optimized endpoints.
      * The hostedZoneId for these endpoints is always the one below.
      * Docs: https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region
-     * PR: https://github.com/amplify-education/serverless-domain-manager/pull/171
+     * PR: https://github.com/amplify-education/serverless-domain-manager-py/pull/171
      */
     private defaultHostedZoneId: string = "Z2FDTNDATAQYW2";
 

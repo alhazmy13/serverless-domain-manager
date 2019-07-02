@@ -1,6 +1,6 @@
 {
-  "name": "serverless-domain-manager",
-  "version": "3.2.7",
+  "name": "serverless-domain-manager-py",
+  "version": "4.0.0",
   "engines": {
     "node": ">=4.0"
   },
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amplify-education/serverless-domain-manager"
+    "url": "https://github.com/alhazmy13/serverless-domain-manager-py"
   },
   "keywords": [
     "serverless plugin custom domain",

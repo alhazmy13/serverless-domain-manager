@@ -70,7 +70,7 @@ class ServerlessCustomDomain {
     public async hookWrapper(lifecycleFunc: any) {
         this.initializeVariables();
         if (!this.enabled) {
-            this.serverless.cli.log("serverless-domain-manager: Custom domain is disabled.");
+            this.serverless.cli.log("serverless-domain-manager-py: Custom domain is disabled.");
             return;
         } else {
             return await lifecycleFunc.call(this);
@@ -215,7 +215,7 @@ class ServerlessCustomDomain {
     public evaluateEnabled(): boolean {
         if (typeof this.serverless.service.custom === "undefined"
             || typeof this.serverless.service.custom.customDomain === "undefined") {
-            throw new Error("serverless-domain-manager: Plugin configuration is missing.");
+            throw new Error("serverless-domain-manager-py: Plugin configuration is missing.");
         }
 
         const enabled = this.serverless.service.custom.customDomain.enabled;
@@ -229,7 +229,7 @@ class ServerlessCustomDomain {
         } else if (typeof enabled === "string" && enabled === "false") {
             return false;
         }
-        throw new Error(`serverless-domain-manager: Ambiguous enablement boolean: "${enabled}"`);
+        throw new Error(`serverless-domain-manager-py: Ambiguous enablement boolean: "${enabled}"`);
     }
 
     /**
@@ -384,7 +384,7 @@ class ServerlessCustomDomain {
         const params = {
             ChangeBatch: {
                 Changes,
-                Comment: "Record created by serverless-domain-manager",
+                Comment: "Record created by serverless-domain-manager-py",
             },
             HostedZoneId: route53HostedZoneId,
         };

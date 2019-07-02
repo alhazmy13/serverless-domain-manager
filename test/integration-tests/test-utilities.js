@@ -49,8 +49,8 @@ async function exec(cmd) {
 async function createTempDir(tempDir, folderName) {
   await exec(`rm -rf ${tempDir}`);
   await exec(`mkdir -p ${tempDir} && cp -R test/integration-tests/${folderName}/. ${tempDir}`);
-  await exec(`mkdir -p ${tempDir}/node_modules/serverless-domain-manager`);
-  await exec(`cp -R . ${tempDir}/node_modules/serverless-domain-manager`);
+  await exec(`mkdir -p ${tempDir}/node_modules/serverless-domain-manager-py`);
+  await exec(`cp -R . ${tempDir}/node_modules/serverless-domain-manager-py`);
 }
 
 /**
@@ -59,7 +59,7 @@ async function createTempDir(tempDir, folderName) {
  */
 async function linkPackages() {
   return new Promise((resolve) => {
-    shell.exec("npm link serverless-domain-manager", { silent: true }, (err, stdout, stderr) => {
+    shell.exec("npm link serverless-domain-manager-py", { silent: true }, (err, stdout, stderr) => {
       if (err || stderr) {
         return resolve(false);
       }

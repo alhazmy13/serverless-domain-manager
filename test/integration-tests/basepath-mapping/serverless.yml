@@ -14,7 +14,7 @@ functions:
           method: get
           cors: true
 plugins:
-  - serverless-domain-manager
+  - serverless-domain-manager-py
 custom:
   customDomain:
     domainName: basepath-mapping-${opt:RANDOM_STRING}.${env:TEST_DOMAIN}

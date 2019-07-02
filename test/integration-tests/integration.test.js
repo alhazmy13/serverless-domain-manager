@@ -292,7 +292,7 @@ describe("Integration Tests", function () { // eslint-disable-line func-names
     before(async () => {
       await utilities.exec(`rm -rf ${TEMP_DIR}`);
       await utilities.exec(`mkdir -p ${TEMP_DIR} && cp -R test/integration-tests/${testName}/. ${TEMP_DIR}`);
-      await utilities.exec(`cd ${TEMP_DIR}/ && npm install serverless-domain-manager@2.6.13`);
+      await utilities.exec(`cd ${TEMP_DIR}/ && npm install serverless-domain-manager-py@4.0.0`);
     });
 
     it("Creates a basepath mapping", async () => {
@@ -300,7 +300,7 @@ describe("Integration Tests", function () { // eslint-disable-line func-names
       await utilities.sleep(60);
       await utilities.exec(`cd ${TEMP_DIR} && sls deploy --RANDOM_STRING ${RANDOM_STRING}`);
       await utilities.sleep(60);
-      await utilities.exec(`cp -R . ${TEMP_DIR}/node_modules/serverless-domain-manager`);
+      await utilities.exec(`cp -R . ${TEMP_DIR}/node_modules/serverless-domain-manager-py`);
       await utilities.exec(`cd ${TEMP_DIR} && sls deploy --RANDOM_STRING ${RANDOM_STRING}`);
 
       const basePath = await utilities.getBasePath(testURL);
@@ -324,7 +324,7 @@ describe("Integration Tests", function () { // eslint-disable-line func-names
     before(async () => {
       await utilities.exec(`rm -rf ${TEMP_DIR}`);
       await utilities.exec(`mkdir -p ${TEMP_DIR} && cp -R test/integration-tests/${testName}/. ${TEMP_DIR}`);
-      await utilities.exec(`cd ${TEMP_DIR}/ && npm install serverless-domain-manager@2.6.13`);
+      await utilities.exec(`cd ${TEMP_DIR}/ && npm install serverless-domain-manager-py@4.0.0`);
     });
 
     it("Creates a basepath mapping", async () => {
@@ -332,7 +332,7 @@ describe("Integration Tests", function () { // eslint-disable-line func-names
       await utilities.sleep(60);
       await utilities.exec(`cd ${TEMP_DIR} && sls deploy --RANDOM_STRING ${RANDOM_STRING}`);
       await utilities.sleep(60);
-      await utilities.exec(`cp -R . ${TEMP_DIR}/node_modules/serverless-domain-manager`);
+      await utilities.exec(`cp -R . ${TEMP_DIR}/node_modules/serverless-domain-manager-py`);
       await utilities.exec(`cd ${TEMP_DIR} && sls deploy --RANDOM_STRING ${RANDOM_STRING}`);
 
       const basePath = await utilities.getBasePath(testURL);
